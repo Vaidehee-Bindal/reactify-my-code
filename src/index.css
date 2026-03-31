@@ -24,8 +24,8 @@
     --muted: 210 20% 96%;
     --muted-foreground: 216 15% 50%;
 
-    --accent: 160 84% 39%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 100% 51%;
+    --accent-foreground: 216 65% 20%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -34,7 +34,7 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 216 65% 20%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -50,8 +50,6 @@
     --navy-light: 216 50% 30%;
     --gold: 45 100% 51%;
     --gold-dark: 40 100% 45%;
-    --emerald: 160 84% 39%;
-    --emerald-dark: 160 84% 30%;
     --gray-light: 210 20% 96%;
     --gray-medium: 210 10% 70%;
 
@@ -72,13 +70,21 @@
     --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 160 84% 39%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 100% 51%;
+    --accent-foreground: 216 65% 20%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 45 100% 51%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -103,24 +109,14 @@
   }
 
   .hero-overlay {
-    background: linear-gradient(135deg, hsl(var(--navy) / 0.9) 0%, hsl(var(--navy-dark) / 0.75) 100%);
+    background: linear-gradient(135deg, hsl(var(--navy) / 0.85) 0%, hsl(var(--navy-dark) / 0.7) 100%);
   }
 
   .nav-dropdown {
-    @apply absolute top-full left-0 bg-primary text-primary-foreground min-w-[240px] py-2 opacity-0 invisible transition-all duration-200 rounded-b-lg shadow-xl;
+    @apply absolute top-full left-0 bg-primary text-primary-foreground min-w-[220px] py-2 opacity-0 invisible transition-all duration-200;
   }
 
   .nav-item:hover .nav-dropdown {
     @apply opacity-100 visible;
-  }
-
-  .glass-card {
-    @apply bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl shadow-lg;
-  }
-}
-
-@layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-secondary to-accent;
   }
 }
