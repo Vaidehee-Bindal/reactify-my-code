@@ -1,139 +1,115 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import { Menu, X, Search, ChevronDown } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
+import { Menu, X, ChevronDown, Shield, Brain, Building2, Target, BookOpen, Users, MapPin, Rocket, HeartHandshake, Globe } from "lucide-react";
 import logoImg from "@/assets/paladin-logo.png";
+import { cn } from "@/lib/utils";
 
-const navItems = [
+interface NavChild {
+  label: string;
+  to: string;
+  icon?: React.ReactNode;
+}
+
+interface NavItem {
+  label: string;
+  to?: string;
+  children?: NavChild[];
+}
+
+const navItems: NavItem[] = [
+  { label: "Home", to: "/" },
   {
-    label: "Security Services",
+    label: "Services",
     children: [
-      { label: "Guard Services", to: "/security-services/security-guards" },
-      { label: "Mobile Patrol", to: "/security-services/mobile-patrols" },
-      { label: "Loss Prevention", to: "/security-services/loss-prevention" },
-      { label: "Event Security Services", to: "/security-services/event-security-services" },
-      { label: "Integrated Guarding", to: "/security-services/integrated-guarding" },
-      { label: "Operations Centres", to: "/security-services/operations-centres" },
+      { label: "Rakshak24x7", to: "/services/rakshak24x7", icon: <Shield className="h-4 w-4" /> },
+      { label: "ATSIntel", to: "/services/atsintel", icon: <Brain className="h-4 w-4" /> },
     ],
   },
   {
-    label: "Industries",
+    label: "About",
     children: [
-      { label: "Healthcare", to: "/industries-served/healthcare" },
-      { label: "Office & Commercial", to: "/industries-served/office-security-service" },
-      { label: "Government & Infrastructure", to: "/industries-served/critical-infrastructure-security" },
-      { label: "Aviation", to: "/industries-served/aviation" },
-      { label: "Industrial Security", to: "/industries-served/oil-gas-industry" },
-      { label: "Retail & Shopping Malls", to: "/industries-served/shopping-malls-retail" },
-      { label: "Warehouse & Distribution", to: "/industries-served/warehouse-security-systems" },
-      { label: "Post Secondary", to: "/industries-served/university-post-secondary-security" },
+      { label: "About Company", to: "/about/company", icon: <Building2 className="h-4 w-4" /> },
+      { label: "Mission & Vision", to: "/about/mission", icon: <Target className="h-4 w-4" /> },
+      { label: "Founding Story", to: "/about/founding", icon: <BookOpen className="h-4 w-4" /> },
+      { label: "Team", to: "/about/team", icon: <Users className="h-4 w-4" /> },
+      { label: "Expansion Plan", to: "/about/expansion", icon: <Rocket className="h-4 w-4" /> },
+      { label: "Why Trust Us", to: "/about/trust", icon: <HeartHandshake className="h-4 w-4" /> },
     ],
   },
-  { label: "Locations", to: "/find-a-location" },
-  {
-    label: "About Us",
-    children: [
-      { label: "Why Paladin", to: "/about-us/why-paladin" },
-      { label: "History", to: "/history" },
-      { label: "Leadership & People", to: "/about-us/leadership" },
-      { label: "Our CARE Culture", to: "/about-us/our-culture" },
-      { label: "Paladin CARES", to: "/about-us/paladin-cares" },
-      { label: "Our Companies", to: "/about-us/our-companies" },
-      { label: "Careers", to: "/careers" },
-    ],
-  },
-  { label: "Blog", to: "/blog" },
-  {
-    label: "Resources",
-    children: [
-      { label: "Media Relations", to: "/media-relations" },
-      { label: "Preparing an RFP?", to: "/knowledge-centre-main/rfp" },
-    ],
-  },
-  { label: "Training Services", to: "/security-services/training-services" },
+  { label: "Location", to: "/location" },
+  { label: "Contact Us", to: "/contact" },
+  { label: "FAQ", to: "/faq" },
 ];
 
-const Header = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
+const DesktopDropdown = ({ item }: { item: NavItem }) => {
+  const location = useLocation();
+  const [open, setOpen] = useState(false);
+  const timeout = useRef<ReturnType<typeof setTimeout>>();
+  const isActive = item.children?.some((c) => location.pathname.startsWith(c.to));
+
+  const enter = () => {
+    clearTimeout(timeout.current);
+    setOpen(true);
+  };
+  const leave = () => {
+    timeout.current = setTimeout(() => setOpen(false), 150);
+  };
+
+  useEffect(() => () => clearTimeout(timeout.current), []);
 
   return (
-    <header className="sticky top-0 z-50 bg-primary shadow-lg">
-      {/* Top bar */}
-      <div className="section-container flex items-center justify-between py-3">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logoImg} alt="Paladin Security" className="h-10 w-10 object-contain" />
-          <span className="font-heading text-lg font-bold text-primary-foreground tracking-wide">
-            Paladin Security
-          </span>
-        </Link>
-        <div className="hidden md:flex items-center gap-6">
-          <Link to="/careers" className="text-sm font-semibold text-primary-foreground hover:text-secondary transition-colors">
-            Careers
-          </Link>
-          <a href="https://communications.paladinsecurity.com/paladin" target="_blank" rel="noopener noreferrer"
-            className="text-sm font-semibold text-primary-foreground hover:text-secondary transition-colors">
-            Employee Login
-          </a>
-          <Search className="h-4 w-4 text-primary-foreground cursor-pointer hover:text-secondary transition-colors" />
-        </div>
-        <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-primary-foreground">
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </div>
-
-      {/* Desktop nav */}
-      <nav className="hidden md:block bg-navy-dark">
-        <div className="section-container">
-          <ul className="flex items-center gap-0">
-            {navItems.map((item) => (
-              <li key={item.label} className="nav-item relative group">
-                {item.to ? (
-                  <Link to={item.to} className="flex items-center gap-1 px-4 py-3 text-sm font-heading font-semibold text-primary-foreground uppercase tracking-wider hover:text-secondary transition-colors">
-                    {item.label}
-                  </Link>
-                ) : (
-                  <span className="flex items-center gap-1 px-4 py-3 text-sm font-heading font-semibold text-primary-foreground uppercase tracking-wider hover:text-secondary transition-colors cursor-pointer">
-                    {item.label}
-                    <ChevronDown className="h-3 w-3" />
-                  </span>
-                )}
-                {item.children && (
-                  <ul className="nav-dropdown shadow-xl z-50">
-                    {item.children.map((child) => (
-                      <li key={child.to}>
-                        <Link to={child.to} className="block px-5 py-2.5 text-sm text-primary-foreground hover:bg-navy-light hover:text-secondary transition-colors">
-                          {child.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
-
-      {/* Mobile nav */}
-      {mobileOpen && (
-        <nav className="md:hidden bg-navy-dark max-h-[80vh] overflow-y-auto">
-          <ul className="py-2">
-            {navItems.map((item) => (
-              <MobileNavItem key={item.label} item={item} onClose={() => setMobileOpen(false)} />
-            ))}
-          </ul>
-        </nav>
-      )}
-    </header>
+    <li className="relative" onMouseEnter={enter} onMouseLeave={leave}>
+      <button
+        className={cn(
+          "flex items-center gap-1 px-4 py-3 text-sm font-heading font-semibold uppercase tracking-wider transition-colors",
+          isActive ? "text-secondary" : "text-primary-foreground hover:text-secondary"
+        )}
+      >
+        {item.label}
+        <ChevronDown className={cn("h-3 w-3 transition-transform duration-200", open && "rotate-180")} />
+      </button>
+      <ul
+        className={cn(
+          "absolute top-full left-0 min-w-[220px] rounded-md bg-primary shadow-xl py-2 transition-all duration-200 z-50",
+          open ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1"
+        )}
+      >
+        {item.children!.map((child) => (
+          <li key={child.to}>
+            <Link
+              to={child.to}
+              className={cn(
+                "flex items-center gap-2.5 px-5 py-2.5 text-sm transition-colors",
+                location.pathname === child.to
+                  ? "text-secondary bg-navy-light"
+                  : "text-primary-foreground hover:bg-navy-light hover:text-secondary"
+              )}
+            >
+              {child.icon}
+              {child.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </li>
   );
 };
 
-const MobileNavItem = ({ item, onClose }: { item: typeof navItems[0]; onClose: () => void }) => {
+const MobileNavItem = ({ item, onClose }: { item: NavItem; onClose: () => void }) => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   if (item.to) {
     return (
       <li>
-        <Link to={item.to} onClick={onClose} className="block px-6 py-3 text-sm font-semibold text-primary-foreground uppercase tracking-wider hover:text-secondary">
+        <Link
+          to={item.to}
+          onClick={onClose}
+          className={cn(
+            "block px-6 py-3 text-sm font-semibold uppercase tracking-wider",
+            location.pathname === item.to ? "text-secondary" : "text-primary-foreground hover:text-secondary"
+          )}
+        >
           {item.label}
         </Link>
       </li>
@@ -142,15 +118,28 @@ const MobileNavItem = ({ item, onClose }: { item: typeof navItems[0]; onClose: (
 
   return (
     <li>
-      <button onClick={() => setOpen(!open)} className="flex items-center justify-between w-full px-6 py-3 text-sm font-semibold text-primary-foreground uppercase tracking-wider hover:text-secondary">
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex items-center justify-between w-full px-6 py-3 text-sm font-semibold text-primary-foreground uppercase tracking-wider hover:text-secondary"
+      >
         {item.label}
-        <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} />
+        <ChevronDown className={cn("h-4 w-4 transition-transform", open && "rotate-180")} />
       </button>
       {open && item.children && (
         <ul className="bg-navy pl-4">
           {item.children.map((child) => (
             <li key={child.to}>
-              <Link to={child.to} onClick={onClose} className="block px-6 py-2 text-sm text-primary-foreground hover:text-secondary">
+              <Link
+                to={child.to}
+                onClick={onClose}
+                className={cn(
+                  "flex items-center gap-2 px-6 py-2 text-sm",
+                  location.pathname === child.to
+                    ? "text-secondary"
+                    : "text-primary-foreground hover:text-secondary"
+                )}
+              >
+                {child.icon}
                 {child.label}
               </Link>
             </li>
@@ -158,6 +147,103 @@ const MobileNavItem = ({ item, onClose }: { item: typeof navItems[0]; onClose: (
         </ul>
       )}
     </li>
+  );
+};
+
+const Header = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [lang, setLang] = useState<"EN" | "HI">("EN");
+  const location = useLocation();
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
+
+  return (
+    <header className="sticky top-0 z-50 bg-primary shadow-lg">
+      {/* Top bar */}
+      <div className="section-container flex items-center justify-between py-3">
+        <Link to="/" className="flex items-center gap-2">
+          <img src={logoImg} alt="Logo" className="h-10 w-10 object-contain" />
+          <span className="font-heading text-lg font-bold text-primary-foreground tracking-wide">
+            Paladin Security
+          </span>
+        </Link>
+
+        <div className="flex items-center gap-3">
+          {/* Language toggle */}
+          <button
+            onClick={() => setLang(lang === "EN" ? "HI" : "EN")}
+            className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary-foreground/30 text-xs font-semibold text-primary-foreground hover:bg-navy-light transition-colors"
+          >
+            <Globe className="h-3.5 w-3.5" />
+            {lang === "EN" ? "हिंदी" : "English"}
+          </button>
+
+          {/* Mobile hamburger */}
+          <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-primary-foreground">
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Desktop nav */}
+      <nav className="hidden md:block bg-navy-dark">
+        <div className="section-container flex items-center justify-between">
+          <ul className="flex items-center">
+            {navItems.map((item) =>
+              item.children ? (
+                <DesktopDropdown key={item.label} item={item} />
+              ) : (
+                <li key={item.label}>
+                  <Link
+                    to={item.to!}
+                    className={cn(
+                      "block px-4 py-3 text-sm font-heading font-semibold uppercase tracking-wider transition-colors",
+                      location.pathname === item.to
+                        ? "text-secondary"
+                        : "text-primary-foreground hover:text-secondary"
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              )
+            )}
+          </ul>
+
+          {/* Desktop language toggle (in nav bar) */}
+          <button
+            onClick={() => setLang(lang === "EN" ? "HI" : "EN")}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary-foreground/20 text-xs font-semibold text-primary-foreground hover:bg-navy-light transition-colors"
+          >
+            <Globe className="h-3.5 w-3.5" />
+            {lang === "EN" ? "हिंदी" : "English"}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile nav */}
+      {mobileOpen && (
+        <nav className="md:hidden bg-navy-dark max-h-[80vh] overflow-y-auto animate-in slide-in-from-top-2 duration-200">
+          <ul className="py-2">
+            {navItems.map((item) => (
+              <MobileNavItem key={item.label} item={item} onClose={() => setMobileOpen(false)} />
+            ))}
+            <li className="px-6 py-3">
+              <button
+                onClick={() => setLang(lang === "EN" ? "HI" : "EN")}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary-foreground/30 text-xs font-semibold text-primary-foreground hover:bg-navy-light transition-colors"
+              >
+                <Globe className="h-3.5 w-3.5" />
+                {lang === "EN" ? "हिंदी" : "English"}
+              </button>
+            </li>
+          </ul>
+        </nav>
+      )}
+    </header>
   );
 };
 
