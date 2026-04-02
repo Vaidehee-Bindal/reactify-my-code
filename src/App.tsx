@@ -12,6 +12,12 @@ import FindALocation from "./pages/FindALocation";
 import AboutUs from "./pages/AboutUs";
 import Careers from "./pages/Careers";
 import Blog from "./pages/Blog";
+import Rakshak24x7 from "./pages/Rakshak24x7";
+import ATSIntel from "./pages/ATSIntel";
+import Contact from "./pages/Contact";
+import FAQ from "./pages/FAQ";
+import Location from "./pages/Location";
+import { AboutCompany, Mission, FoundingStory, Team, Expansion, WhyTrustUs } from "./pages/AboutPages";
 import { HistoryPage, MediaRelations, PrivacyPolicy, KnowledgeCentre, FindYourFit, LawEnforcement, PropertyManagement } from "./pages/GenericPage";
 
 const queryClient = new QueryClient();
@@ -25,34 +31,35 @@ const App = () => (
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />
-            
-            {/* Security Services */}
+
+            {/* New routes */}
+            <Route path="/services/rakshak24x7" element={<Rakshak24x7 />} />
+            <Route path="/services/atsintel" element={<ATSIntel />} />
+            <Route path="/about/company" element={<AboutCompany />} />
+            <Route path="/about/mission" element={<Mission />} />
+            <Route path="/about/founding" element={<FoundingStory />} />
+            <Route path="/about/team" element={<Team />} />
+            <Route path="/about/expansion" element={<Expansion />} />
+            <Route path="/about/trust" element={<WhyTrustUs />} />
+            <Route path="/location" element={<Location />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/faq" element={<FAQ />} />
+
+            {/* Legacy routes */}
             <Route path="/security-services" element={<SecurityServices />} />
             <Route path="/security-services/:service" element={<SecurityServices />} />
-            
-            {/* Industries */}
             <Route path="/industries-served" element={<IndustriesServed />} />
             <Route path="/industries-served/:industry" element={<IndustriesServed />} />
-            
-            {/* Locations */}
             <Route path="/find-a-location" element={<FindALocation />} />
             <Route path="/locations/:location" element={<FindALocation />} />
-            
-            {/* About Us */}
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/about-us/:page" element={<AboutUs />} />
             <Route path="/about-us/why-paladin/:subpage" element={<AboutUs />} />
             <Route path="/about-us/our-culture/:subpage" element={<AboutUs />} />
-            
-            {/* Careers */}
             <Route path="/careers" element={<Careers />} />
             <Route path="/careers/:page" element={<Careers />} />
             <Route path="/find-your-fit" element={<FindYourFit />} />
-            
-            {/* Blog */}
             <Route path="/blog" element={<Blog />} />
-            
-            {/* Other pages */}
             <Route path="/history" element={<HistoryPage />} />
             <Route path="/media-relations" element={<MediaRelations />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
@@ -65,7 +72,7 @@ const App = () => (
             <Route path="/security-prevention/:slug" element={<Blog />} />
             <Route path="/safety-tips/:slug" element={<Blog />} />
             <Route path="/security-careers/:slug" element={<Careers />} />
-            
+
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
