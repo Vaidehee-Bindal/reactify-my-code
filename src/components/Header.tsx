@@ -213,13 +213,11 @@ const Header = () => {
             )}
           </ul>
 
-          {/* Desktop language toggle (in nav bar) */}
+          {/* Download App CTA */}
           <button
-            onClick={() => setLang(lang === "EN" ? "HI" : "EN")}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary-foreground/20 text-xs font-semibold text-primary-foreground hover:bg-navy-light transition-colors"
+            className="px-5 py-2 rounded-md bg-secondary text-secondary-foreground text-xs font-bold uppercase tracking-wider hover:bg-gold-dark hover:scale-105 transition-all duration-200"
           >
-            <Globe className="h-3.5 w-3.5" />
-            {lang === "EN" ? "हिंदी" : "English"}
+            Download App
           </button>
         </div>
       </nav>
