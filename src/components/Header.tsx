@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
-import { Menu, X, ChevronDown, Shield, Brain, Building2, Target, BookOpen, Users, MapPin, Rocket, HeartHandshake, Globe } from "lucide-react";
+import { Menu, X, ChevronDown, Globe } from "lucide-react";
 import logoImg from "@/assets/paladin-logo.png";
 import { cn } from "@/lib/utils";
 
