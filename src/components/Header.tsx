@@ -21,8 +21,8 @@ const navItems: NavItem[] = [
   {
     label: "Services",
     children: [
-      { label: "Rakshak24x7", to: "/services/rakshak24x7", icon: <Shield className="h-4 w-4" /> },
-      { label: "ATSIntel", to: "/services/atsintel", icon: <Brain className="h-4 w-4" /> },
+      { label: "Rakshak24x7", to: "/services/rakshak24x7" },
+      { label: "ATSIntel", to: "/services/atsintel" },
     ],
   },
   {
