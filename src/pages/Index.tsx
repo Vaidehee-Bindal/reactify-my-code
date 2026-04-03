@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { Shield, Car, ShoppingBag, Calendar, Layers, Radio, Building2, Heart, Briefcase, Factory, ShoppingCart, Warehouse, GraduationCap, Plane, MapPin } from "lucide-react";
+import { Shield, Car, ShoppingBag, Calendar, Heart, Briefcase, Factory, ShoppingCart, Warehouse, GraduationCap, Plane, Building2, MapPin } from "lucide-react";
 import HeroBanner from "@/components/HeroBanner";
 import ServiceCard from "@/components/ServiceCard";
+import JaipurMap from "@/components/JaipurMap";
 import heroBg from "@/assets/hero-bg.jpg";
 import differenceBg from "@/assets/paladin-difference.jpg";
 
@@ -77,7 +78,7 @@ const Index = () => {
               Leading Canada's Security Services
             </h2>
             <p className="text-muted-foreground max-w-3xl mx-auto">
-              We're on a mission to offer top-notch security services and products that empower our clients to manage their operations effortlessly. We take pride in championing our employees as Paladin Family members and setting a new industry standard through our cutting-edge training, empathy-led security model, promotion-from-within philosophy, and CARE Culture.
+              We're on a mission to offer top-notch security services and products that empower our clients to manage their operations effortlessly.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -96,7 +97,7 @@ const Index = () => {
               Innovative Security Programs
             </h2>
             <p className="text-primary-foreground/80 max-w-3xl mx-auto mb-10">
-              As the largest full-service security company in the country, Paladin provides specialized security services across a wide range of sectors to cater to unique security and safety needs.
+              As the largest full-service security company in the country, Paladin provides specialized security services across a wide range of sectors.
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -112,18 +113,21 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Locations CTA */}
+      {/* Locations CTA + Map */}
       <section className="py-16 bg-muted">
         <div className="section-container text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground uppercase mb-6">
             Security Service Locations
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-            With offices from coast to coast, Paladin Security has you covered across Canada. Find the location nearest to you.
+            With offices across Jaipur and Rajasthan, Paladin Security has you covered. Find the location nearest to you.
           </p>
-          <Link to="/find-a-location" className="inline-flex items-center gap-2 px-8 py-3 bg-secondary text-secondary-foreground font-heading font-bold text-sm uppercase tracking-wider rounded hover:bg-gold-dark transition-colors">
+          <Link to="/location" className="inline-flex items-center gap-2 px-8 py-3 bg-secondary text-secondary-foreground font-heading font-bold text-sm uppercase tracking-wider rounded hover:bg-gold-dark transition-colors mb-10">
             <MapPin className="h-4 w-4" /> Find a Location
           </Link>
+          <div className="mt-10">
+            <JaipurMap />
+          </div>
         </div>
       </section>
 

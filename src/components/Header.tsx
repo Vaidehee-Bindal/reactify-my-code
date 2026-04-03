@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
-import { Menu, X, ChevronDown, Shield, Brain, Building2, Target, BookOpen, Users, MapPin, Rocket, HeartHandshake, Globe } from "lucide-react";
+import { Menu, X, ChevronDown, Globe } from "lucide-react";
 import logoImg from "@/assets/paladin-logo.png";
 import { cn } from "@/lib/utils";
 
@@ -21,19 +21,19 @@ const navItems: NavItem[] = [
   {
     label: "Services",
     children: [
-      { label: "Rakshak24x7", to: "/services/rakshak24x7", icon: <Shield className="h-4 w-4" /> },
-      { label: "ATSIntel", to: "/services/atsintel", icon: <Brain className="h-4 w-4" /> },
+      { label: "Rakshak24x7", to: "/services/rakshak24x7" },
+      { label: "ATSIntel", to: "/services/atsintel" },
     ],
   },
   {
     label: "About",
     children: [
-      { label: "About Company", to: "/about/company", icon: <Building2 className="h-4 w-4" /> },
-      { label: "Mission & Vision", to: "/about/mission", icon: <Target className="h-4 w-4" /> },
-      { label: "Founding Story", to: "/about/founding", icon: <BookOpen className="h-4 w-4" /> },
-      { label: "Team", to: "/about/team", icon: <Users className="h-4 w-4" /> },
-      { label: "Expansion Plan", to: "/about/expansion", icon: <Rocket className="h-4 w-4" /> },
-      { label: "Why Trust Us", to: "/about/trust", icon: <HeartHandshake className="h-4 w-4" /> },
+      { label: "About Company", to: "/about/company" },
+      { label: "Mission & Vision", to: "/about/mission" },
+      { label: "Founding Story", to: "/about/founding" },
+      { label: "Team", to: "/about/team" },
+      { label: "Expansion Plan", to: "/about/expansion" },
+      { label: "Why Trust Us", to: "/about/trust" },
     ],
   },
   { label: "Location", to: "/location" },
