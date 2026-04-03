@@ -28,12 +28,12 @@ const navItems: NavItem[] = [
   {
     label: "About",
     children: [
-      { label: "About Company", to: "/about/company", icon: <Building2 className="h-4 w-4" /> },
-      { label: "Mission & Vision", to: "/about/mission", icon: <Target className="h-4 w-4" /> },
-      { label: "Founding Story", to: "/about/founding", icon: <BookOpen className="h-4 w-4" /> },
-      { label: "Team", to: "/about/team", icon: <Users className="h-4 w-4" /> },
-      { label: "Expansion Plan", to: "/about/expansion", icon: <Rocket className="h-4 w-4" /> },
-      { label: "Why Trust Us", to: "/about/trust", icon: <HeartHandshake className="h-4 w-4" /> },
+      { label: "About Company", to: "/about/company" },
+      { label: "Mission & Vision", to: "/about/mission" },
+      { label: "Founding Story", to: "/about/founding" },
+      { label: "Team", to: "/about/team" },
+      { label: "Expansion Plan", to: "/about/expansion" },
+      { label: "Why Trust Us", to: "/about/trust" },
     ],
   },
   { label: "Location", to: "/location" },
