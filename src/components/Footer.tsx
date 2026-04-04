@@ -1,46 +1,89 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Linkedin, Youtube, Twitter } from "lucide-react";
-
-const footerLinks = [
-  { label: "Careers", to: "/careers" },
-  { label: "Blog", to: "/blog" },
-  { label: "Privacy Policy", to: "/privacy-policy" },
-];
-
-const socialLinks = [
-  { icon: Instagram, href: "https://www.instagram.com/paladinsecurity/" },
-  { icon: Facebook, href: "https://www.facebook.com/paladinsecurity/" },
-  { icon: Youtube, href: "https://www.youtube.com/user/PaladinSecurityTV" },
-  { icon: Linkedin, href: "https://www.linkedin.com/company/paladinsecuritygroup-ltd" },
-  { icon: Twitter, href: "https://twitter.com/PaladinSecurity/" },
-];
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="section-container py-8">
-        {/* Social icons */}
-        <div className="flex justify-center gap-4 mb-6">
-          {socialLinks.map((s) => (
-            <a key={s.href} href={s.href} target="_blank" rel="noopener noreferrer"
-              className="h-10 w-10 rounded-full bg-navy-light flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground transition-colors">
-              <s.icon className="h-5 w-5" />
-            </a>
-          ))}
+    <footer>
+      {/* Top CTA Strip */}
+      <div className="bg-destructive">
+        <div className="section-container py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-destructive-foreground font-heading font-semibold text-sm md:text-base text-center sm:text-left">
+            Trusted Security, Intelligence &amp; Emergency Response Solutions Across India
+          </p>
+          <button className="border-2 border-destructive-foreground text-destructive-foreground px-6 py-2.5 font-heading font-bold text-sm uppercase tracking-wider rounded hover:bg-destructive-foreground hover:text-destructive transition-colors whitespace-nowrap">
+            Download App
+          </button>
+        </div>
+      </div>
+
+      {/* Main Footer */}
+      <div className="bg-[hsl(0,0%,15%)] text-[hsl(0,0%,80%)]">
+        <div className="section-container py-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+            {/* Column 1 */}
+            <div>
+              <h4 className="font-heading font-bold text-[hsl(0,0%,95%)] uppercase text-sm tracking-wider mb-5">Company</h4>
+              <ul className="space-y-3 text-sm">
+                <li><Link to="/about/company" className="hover:text-secondary transition-colors">About ATS</Link></li>
+                <li><Link to="/about/mission" className="hover:text-secondary transition-colors">Mission &amp; Vision</Link></li>
+                <li><Link to="/about/founding" className="hover:text-secondary transition-colors">Founding Story</Link></li>
+                <li><Link to="/about/trust" className="hover:text-secondary transition-colors">Why Trust Us</Link></li>
+              </ul>
+            </div>
+
+            {/* Column 2 */}
+            <div>
+              <h4 className="font-heading font-bold text-[hsl(0,0%,95%)] uppercase text-sm tracking-wider mb-5">Services</h4>
+              <ul className="space-y-3 text-sm">
+                <li><Link to="/services/rakshak24x7" className="hover:text-secondary transition-colors">Rakshak24x7</Link></li>
+                <li><Link to="/services/atsintel" className="hover:text-secondary transition-colors">ATSIntel</Link></li>
+                <li><Link to="/services/atsintel#how-it-works" className="hover:text-secondary transition-colors">How It Works</Link></li>
+              </ul>
+            </div>
+
+            {/* Column 3 */}
+            <div>
+              <h4 className="font-heading font-bold text-[hsl(0,0%,95%)] uppercase text-sm tracking-wider mb-5">Quick Links</h4>
+              <ul className="space-y-3 text-sm">
+                <li><Link to="/careers" className="hover:text-secondary transition-colors">Careers</Link></li>
+                <li><Link to="/blog" className="hover:text-secondary transition-colors">Blog</Link></li>
+                <li><Link to="/faq" className="hover:text-secondary transition-colors">FAQ</Link></li>
+                <li><Link to="/contact" className="hover:text-secondary transition-colors">Contact Us</Link></li>
+                <li><Link to="/location" className="hover:text-secondary transition-colors">Location</Link></li>
+              </ul>
+            </div>
+
+            {/* Column 4 */}
+            <div>
+              <h4 className="font-heading font-bold text-[hsl(0,0%,95%)] uppercase text-sm tracking-wider mb-5">Download &amp; Contact</h4>
+              <button className="mb-6 bg-secondary text-secondary-foreground px-6 py-2.5 font-heading font-bold text-sm uppercase tracking-wider rounded hover:bg-[hsl(var(--gold-dark))] transition-colors">
+                Download App
+              </button>
+              <ul className="space-y-3 text-sm">
+                <li>Email: <a href="mailto:support@atsindia.in" className="hover:text-secondary transition-colors">support@atsindia.in</a></li>
+                <li>Phone: <a href="tel:+91XXXXXXXXXX" className="hover:text-secondary transition-colors">+91 XXXXX XXXXX</a></li>
+                <li>Location: Hyderabad, India</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        {/* Footer nav */}
-        <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-6">
-          {footerLinks.map((link) => (
-            <Link key={link.to} to={link.to} className="text-sm hover:text-secondary transition-colors">
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-
-        <p className="text-center text-sm text-muted-foreground">
-          Copyright © {new Date().getFullYear()} Paladin Security
-        </p>
+        {/* Bottom Bar */}
+        <div className="border-t border-[hsl(0,0%,25%)]">
+          <div className="section-container py-5 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[hsl(0,0%,55%)]">
+            <p>© {new Date().getFullYear()} Aanjaneya Taskforce Services (ATS). All rights reserved.</p>
+            <div className="flex items-center gap-5">
+              <Link to="/privacy-policy" className="hover:text-secondary transition-colors">Privacy Policy</Link>
+              <span>|</span>
+              <Link to="/terms" className="hover:text-secondary transition-colors">Terms &amp; Conditions</Link>
+              <div className="flex items-center gap-3 ml-3">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors"><Linkedin className="h-4 w-4" /></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors"><Instagram className="h-4 w-4" /></a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors"><Facebook className="h-4 w-4" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );
