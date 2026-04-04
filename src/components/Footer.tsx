@@ -5,12 +5,12 @@ const Footer = () => {
   return (
     <footer>
       {/* Top CTA Strip */}
-      <div className="bg-destructive">
+      <div className="bg-primary">
         <div className="section-container py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-destructive-foreground font-heading font-semibold text-sm md:text-base text-center sm:text-left">
+          <p className="text-primary-foreground font-heading font-semibold text-sm md:text-base text-center sm:text-left">
             Trusted Security, Intelligence &amp; Emergency Response Solutions Across India
           </p>
-          <button className="border-2 border-destructive-foreground text-destructive-foreground px-6 py-2.5 font-heading font-bold text-sm uppercase tracking-wider rounded hover:bg-destructive-foreground hover:text-destructive transition-colors whitespace-nowrap">
+          <button className="border-2 border-primary-foreground text-primary-foreground px-6 py-2.5 font-heading font-bold text-sm uppercase tracking-wider rounded hover:bg-primary-foreground hover:text-primary transition-colors whitespace-nowrap">
             Download App
           </button>
         </div>
