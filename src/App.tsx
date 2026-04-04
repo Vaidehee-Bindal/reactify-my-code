@@ -55,7 +55,7 @@ const App = () => (
             <Route path="/find-your-fit" element={<FindYourFit />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/history" element={<HistoryPage />} />
-            <Route path="/media-relations" element={<MediaRelations />} />
+            
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/knowledge-centre-main/rfp" element={<KnowledgeCentre />} />
             <Route path="/knowledge-centre-main" element={<KnowledgeCentre />} />
