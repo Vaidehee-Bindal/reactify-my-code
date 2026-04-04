@@ -18,7 +18,7 @@ import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import Location from "./pages/Location";
 import { AboutCompany, Mission, FoundingStory, Team, Expansion, WhyTrustUs } from "./pages/AboutPages";
-import { HistoryPage, MediaRelations, PrivacyPolicy, KnowledgeCentre, FindYourFit, LawEnforcement, PropertyManagement } from "./pages/GenericPage";
+import { HistoryPage, PrivacyPolicy, KnowledgeCentre, FindYourFit, LawEnforcement, PropertyManagement } from "./pages/GenericPage";
 
 const queryClient = new QueryClient();
 
