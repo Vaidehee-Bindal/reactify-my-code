@@ -50,12 +50,6 @@ const App = () => (
             <Route path="/security-services/:service" element={<SecurityServices />} />
             <Route path="/industries-served" element={<IndustriesServed />} />
             <Route path="/industries-served/:industry" element={<IndustriesServed />} />
-            <Route path="/find-a-location" element={<FindALocation />} />
-            <Route path="/locations/:location" element={<FindALocation />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/about-us/:page" element={<AboutUs />} />
-            <Route path="/about-us/why-paladin/:subpage" element={<AboutUs />} />
-            <Route path="/about-us/our-culture/:subpage" element={<AboutUs />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/careers/:page" element={<Careers />} />
             <Route path="/find-your-fit" element={<FindYourFit />} />
