@@ -8,7 +8,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import SecurityServices from "./pages/SecurityServices";
 import IndustriesServed from "./pages/IndustriesServed";
-import FindALocation from "./pages/FindALocation";
+
 import AboutUs from "./pages/AboutUs";
 import Careers from "./pages/Careers";
 import Blog from "./pages/Blog";
