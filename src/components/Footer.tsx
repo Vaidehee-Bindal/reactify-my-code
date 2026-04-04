@@ -5,10 +5,10 @@ const Footer = () => {
   return (
     <footer>
       {/* Top CTA Strip */}
-      <div className="bg-primary">
+      <div className="bg-primary/80">
         <div className="section-container py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-primary-foreground font-heading font-semibold text-sm md:text-base text-center sm:text-left">
-            Trusted Security, Intelligence &amp; Emergency Response Solutions Across India
+            Trusted Security, Intelligence &amp; Emergency Response Solutions Across Jaipur
           </p>
           <button className="border-2 border-primary-foreground text-primary-foreground px-6 py-2.5 font-heading font-bold text-sm uppercase tracking-wider rounded hover:bg-primary-foreground hover:text-primary transition-colors whitespace-nowrap">
             Download App
