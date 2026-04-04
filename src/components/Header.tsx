@@ -23,6 +23,7 @@ const navItems: NavItem[] = [
     children: [
       { label: "Rakshak24x7", to: "/services/rakshak24x7" },
       { label: "ATSIntel", to: "/services/atsintel" },
+      { label: "How It Works", to: "/services/atsintel#how-it-works" },
     ],
   },
   {
