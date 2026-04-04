@@ -2,11 +2,8 @@ import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Youtube, Twitter } from "lucide-react";
 
 const footerLinks = [
-  { label: "About Us", to: "/about-us/why-paladin" },
   { label: "Careers", to: "/careers" },
-  { label: "Find a Location", to: "/find-a-location" },
   { label: "Blog", to: "/blog" },
-  { label: "Media Relations", to: "/media-relations" },
   { label: "Privacy Policy", to: "/privacy-policy" },
 ];
 
