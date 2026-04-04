@@ -20,9 +20,6 @@ export const HistoryPage = () => (
   <GenericPage title="Our History" content="Paladin Security was founded in 1976 and has grown to become Canada's largest independently owned security company. Over the decades, we've built our reputation on exceptional service, innovation, and a genuine commitment to our people and communities. From humble beginnings in British Columbia, Paladin has expanded coast to coast, serving thousands of clients across healthcare, education, government, retail, and many other sectors. Our promotion-from-within philosophy has been a cornerstone of our success, developing leaders at every level of the organization." />
 );
 
-export const MediaRelations = () => (
-  <GenericPage title="Media Relations" content="For media inquiries, please contact our communications team. Paladin Security is committed to transparency and is happy to provide expert commentary on security-related topics. Our communications team works with media outlets across Canada to share insights on security trends, best practices, and community safety initiatives." />
-);
 
 export const PrivacyPolicy = () => (
   <GenericPage title="Privacy Policy" content="Paladin Security Group is committed to protecting the privacy of our clients, employees, and website visitors. This Privacy Policy outlines how we collect, use, disclose, and safeguard your personal information. We comply with the Personal Information Protection and Electronic Documents Act (PIPEDA) and applicable provincial privacy legislation." />

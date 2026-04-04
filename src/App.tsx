@@ -8,8 +8,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import SecurityServices from "./pages/SecurityServices";
 import IndustriesServed from "./pages/IndustriesServed";
-import FindALocation from "./pages/FindALocation";
-import AboutUs from "./pages/AboutUs";
+
+
 import Careers from "./pages/Careers";
 import Blog from "./pages/Blog";
 import Rakshak24x7 from "./pages/Rakshak24x7";
@@ -18,7 +18,7 @@ import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import Location from "./pages/Location";
 import { AboutCompany, Mission, FoundingStory, Team, Expansion, WhyTrustUs } from "./pages/AboutPages";
-import { HistoryPage, MediaRelations, PrivacyPolicy, KnowledgeCentre, FindYourFit, LawEnforcement, PropertyManagement } from "./pages/GenericPage";
+import { HistoryPage, PrivacyPolicy, KnowledgeCentre, FindYourFit, LawEnforcement, PropertyManagement } from "./pages/GenericPage";
 
 const queryClient = new QueryClient();
 
@@ -50,18 +50,12 @@ const App = () => (
             <Route path="/security-services/:service" element={<SecurityServices />} />
             <Route path="/industries-served" element={<IndustriesServed />} />
             <Route path="/industries-served/:industry" element={<IndustriesServed />} />
-            <Route path="/find-a-location" element={<FindALocation />} />
-            <Route path="/locations/:location" element={<FindALocation />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/about-us/:page" element={<AboutUs />} />
-            <Route path="/about-us/why-paladin/:subpage" element={<AboutUs />} />
-            <Route path="/about-us/our-culture/:subpage" element={<AboutUs />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/careers/:page" element={<Careers />} />
             <Route path="/find-your-fit" element={<FindYourFit />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/history" element={<HistoryPage />} />
-            <Route path="/media-relations" element={<MediaRelations />} />
+            
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/knowledge-centre-main/rfp" element={<KnowledgeCentre />} />
             <Route path="/knowledge-centre-main" element={<KnowledgeCentre />} />
