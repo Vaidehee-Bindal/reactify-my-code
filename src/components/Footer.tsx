@@ -5,12 +5,12 @@ const Footer = () => {
   return (
     <footer>
       {/* Top CTA Strip */}
-      <div className="bg-destructive">
+      <div className="bg-primary">
         <div className="section-container py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-destructive-foreground font-heading font-semibold text-sm md:text-base text-center sm:text-left">
+          <p className="text-primary-foreground font-heading font-semibold text-sm md:text-base text-center sm:text-left">
             Trusted Security, Intelligence &amp; Emergency Response Solutions Across India
           </p>
-          <button className="border-2 border-destructive-foreground text-destructive-foreground px-6 py-2.5 font-heading font-bold text-sm uppercase tracking-wider rounded hover:bg-destructive-foreground hover:text-destructive transition-colors whitespace-nowrap">
+          <button className="border-2 border-primary-foreground text-primary-foreground px-6 py-2.5 font-heading font-bold text-sm uppercase tracking-wider rounded hover:bg-primary-foreground hover:text-primary transition-colors whitespace-nowrap">
             Download App
           </button>
         </div>
@@ -55,14 +55,11 @@ const Footer = () => {
 
             {/* Column 4 */}
             <div>
-              <h4 className="font-heading font-bold text-[hsl(0,0%,95%)] uppercase text-sm tracking-wider mb-5">Download &amp; Contact</h4>
-              <button className="mb-6 bg-secondary text-secondary-foreground px-6 py-2.5 font-heading font-bold text-sm uppercase tracking-wider rounded hover:bg-[hsl(var(--gold-dark))] transition-colors">
-                Download App
-              </button>
+              <h4 className="font-heading font-bold text-[hsl(0,0%,95%)] uppercase text-sm tracking-wider mb-5">Contact</h4>
               <ul className="space-y-3 text-sm">
                 <li>Email: <a href="mailto:support@atsindia.in" className="hover:text-secondary transition-colors">support@atsindia.in</a></li>
                 <li>Phone: <a href="tel:+91XXXXXXXXXX" className="hover:text-secondary transition-colors">+91 XXXXX XXXXX</a></li>
-                <li>Location: Hyderabad, India</li>
+                <li>Location: Jaipur, Rajasthan, India</li>
               </ul>
             </div>
           </div>
