@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown, Globe } from "lucide-react";
-import logoImg from "@/assets/ats-logo.jpeg";
+import logoImg from "@/assets/ats-logo.png";
 import { cn } from "@/lib/utils";
 
 interface NavChild {
