@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown, Globe } from "lucide-react";
-import logoImg from "@/assets/paladin-logo.png";
+import logoImg from "@/assets/ats-logo.png";
 import { cn } from "@/lib/utils";
 
 interface NavChild {
@@ -168,7 +168,7 @@ const Header = () => {
         <Link to="/" className="flex items-center gap-2">
           <img src={logoImg} alt="Logo" className="h-10 w-10 object-contain" />
           <span className="font-heading text-lg font-bold text-primary-foreground tracking-wide">
-            Paladin Security
+            Aanjaneya Taskforce Services
           </span>
         </Link>
 
