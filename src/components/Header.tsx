@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown, Globe } from "lucide-react";
-import logoImg from "@/assets/ats-logo.png";
+import logoImg from "@/assets/ats-logo.jpeg";
 import { cn } from "@/lib/utils";
 
 interface NavChild {
@@ -165,9 +165,9 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-primary shadow-lg">
       {/* Top bar */}
       <div className="section-container flex items-center justify-between py-3">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logoImg} alt="ATS Logo" className="h-14 w-14 object-contain" />
-          <span className="font-heading text-lg font-bold text-primary-foreground tracking-wide">
+        <Link to="/" className="flex items-center gap-3">
+          <img src={logoImg} alt="ATS Logo" className="h-16 w-16 rounded-md object-cover" />
+          <span className="font-heading text-xl font-bold text-primary-foreground tracking-wide">
             Aanjaneya Taskforce Services
           </span>
         </Link>
