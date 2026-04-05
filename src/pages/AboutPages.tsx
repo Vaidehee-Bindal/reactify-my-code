@@ -51,7 +51,7 @@ const AlternatingSection = ({ section, bg }: { section: ContentSection; bg?: str
 };
 
 const BottomCta = ({ title, text }: { title: string; text: string }) => (
-  <section className="py-16 bg-primary">
+  <section className="py-16 bg-[#122C54]">
     <div className="section-container text-center">
       <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground uppercase mb-6">{title}</h2>
       <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-8">{text}</p>
