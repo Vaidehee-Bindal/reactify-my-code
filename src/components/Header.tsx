@@ -166,7 +166,7 @@ const Header = () => {
       {/* Top bar */}
       <div className="section-container flex items-center justify-between py-3">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logoImg} alt="Logo" className="h-10 w-10 object-contain" />
+          <img src={logoImg} alt="ATS Logo" className="h-14 w-14 object-contain" />
           <span className="font-heading text-lg font-bold text-primary-foreground tracking-wide">
             Aanjaneya Taskforce Services
           </span>
