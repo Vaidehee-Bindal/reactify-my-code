@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer>
       {/* Top CTA Strip */}
-      <div className="bg-primary">
+      <div className="bg-[#122C54]">
         <div className="section-container py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-primary-foreground font-heading font-semibold text-sm md:text-base text-center sm:text-left">
             Trusted Security, Intelligence &amp; Emergency Response Solutions Across Jaipur
@@ -37,7 +37,7 @@ const Footer = () => {
               <ul className="space-y-3 text-sm">
                 <li><Link to="/services/rakshak24x7" className="hover:text-secondary transition-colors">Rakshak24x7</Link></li>
                 <li><Link to="/services/atsintel" className="hover:text-secondary transition-colors">ATSIntel</Link></li>
-                <li><Link to="/how-it-works" className="hover:text-secondary transition-colors">How It Works</Link></li>
+                <li><Link to="/services/atsintel#how-it-works" className="hover:text-secondary transition-colors">How It Works</Link></li>
               </ul>
             </div>
 

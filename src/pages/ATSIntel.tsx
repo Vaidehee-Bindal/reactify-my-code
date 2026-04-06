@@ -58,8 +58,49 @@ const ATSIntel = () => {
         </div>
       </section>
 
+      {/* Clear visual separator */}
+      <div className="bg-[#122C54] py-12">
+        <div className="section-container text-center">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-primary-foreground uppercase mb-4">
+            Discover Our Intelligence Process
+          </h2>
+          <p className="text-primary-foreground/70">Learn the step-by-step methodology behind ATSIntel's threat intelligence.</p>
+        </div>
+      </div>
+
+      {/* How It Works */}
+      <section id="how-it-works" className="py-16 bg-background">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground uppercase mb-2">
+              How It Works
+            </h2>
+            <div className="w-16 h-1 bg-secondary mx-auto my-4" />
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Our intelligence process follows a proven methodology to deliver actionable security insights.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { step: "01", title: "Data Collection", desc: "We gather intelligence from multiple open and proprietary sources across global networks." },
+              { step: "02", title: "Analysis", desc: "Our analysts process and correlate data to identify patterns, trends, and emerging threats." },
+              { step: "03", title: "Threat Assessment", desc: "Risk levels are evaluated and actionable insights are generated with priority ratings." },
+              { step: "04", title: "Reporting", desc: "Comprehensive reports are delivered with clear recommendations for risk mitigation." },
+            ].map((item) => (
+              <div key={item.step} className="bg-card rounded-lg p-8 text-center shadow-sm border border-border hover:shadow-lg transition-shadow">
+                <div className="h-14 w-14 rounded-full bg-secondary flex items-center justify-center mx-auto mb-4">
+                  <span className="font-heading font-bold text-secondary-foreground text-lg">{item.step}</span>
+                </div>
+                <h3 className="font-heading font-bold text-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* When an Incident Happens */}
-      <section className="py-16">
+      <section className="py-16 bg-muted">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch">
             <div className="bg-card p-10 md:p-14 flex flex-col justify-center">
@@ -90,14 +131,9 @@ const ATSIntel = () => {
           <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-8">
             Contact our team to learn how ATSIntel can strengthen your security posture with real-time threat intelligence.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/contact" className="inline-block px-8 py-3 bg-secondary text-secondary-foreground font-heading font-bold text-sm uppercase tracking-wider rounded hover:bg-gold-dark transition-colors">
-              Partner With Us
-            </Link>
-            <Link to="/how-it-works" className="inline-block px-8 py-3 border-2 border-primary-foreground text-primary-foreground font-heading font-bold text-sm uppercase tracking-wider rounded hover:bg-primary-foreground hover:text-primary transition-colors">
-              See How It Works
-            </Link>
-          </div>
+          <Link to="/contact" className="inline-block px-8 py-3 bg-secondary text-secondary-foreground font-heading font-bold text-sm uppercase tracking-wider rounded hover:bg-gold-dark transition-colors">
+            Get Started
+          </Link>
         </div>
       </section>
     </div>
