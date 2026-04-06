@@ -14,6 +14,7 @@ import Careers from "./pages/Careers";
 import Blog from "./pages/Blog";
 import Rakshak24x7 from "./pages/Rakshak24x7";
 import ATSIntel from "./pages/ATSIntel";
+import HowItWorks from "./pages/HowItWorks";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import Location from "./pages/Location";
