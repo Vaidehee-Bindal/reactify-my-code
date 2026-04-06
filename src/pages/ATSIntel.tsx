@@ -58,29 +58,6 @@ const ATSIntel = () => {
         </div>
       </section>
 
-      {/* When an Incident Happens */}
-      <section className="py-16 bg-muted">
-        <div className="section-container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch">
-            <div className="bg-card p-10 md:p-14 flex flex-col justify-center">
-              <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground uppercase mb-2">
-                When an Incident Happens, You Want Us to Respond
-              </h2>
-              <div className="w-16 h-1 bg-primary my-4" />
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Our services start with our specialized security intelligence officers, and that means <strong>hiring and training the right people</strong>. Our experts influence best practices and we lead the way in patient-centric training and focus on safety and well-being.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Our foundational officer training far exceeds security industry standards. When coupled with our renowned training system, our officers are equipped with the tools, knowledge, and resources to proactively manage threats and excel in their role.
-              </p>
-            </div>
-            <div className="bg-primary min-h-[350px] flex items-center justify-center">
-              <div className="text-center text-primary-foreground/30 text-lg font-heading">Incident Response Image</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-16 bg-primary">
         <div className="section-container text-center">
