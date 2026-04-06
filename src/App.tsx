@@ -14,6 +14,7 @@ import Careers from "./pages/Careers";
 import Blog from "./pages/Blog";
 import Rakshak24x7 from "./pages/Rakshak24x7";
 import ATSIntel from "./pages/ATSIntel";
+import HowItWorks from "./pages/HowItWorks";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import Location from "./pages/Location";
@@ -35,6 +36,7 @@ const App = () => (
             {/* New routes */}
             <Route path="/services/rakshak24x7" element={<Rakshak24x7 />} />
             <Route path="/services/atsintel" element={<ATSIntel />} />
+            <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/about/company" element={<AboutCompany />} />
             <Route path="/about/mission" element={<Mission />} />
             <Route path="/about/founding" element={<FoundingStory />} />
