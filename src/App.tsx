@@ -36,6 +36,7 @@ const App = () => (
             {/* New routes */}
             <Route path="/services/rakshak24x7" element={<Rakshak24x7 />} />
             <Route path="/services/atsintel" element={<ATSIntel />} />
+            <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/about/company" element={<AboutCompany />} />
             <Route path="/about/mission" element={<Mission />} />
             <Route path="/about/founding" element={<FoundingStory />} />
