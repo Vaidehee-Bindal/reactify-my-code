@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer>
       {/* Top CTA Strip */}
-      <div className="bg-[#122C54]">
+      <div className="bg-[#091232]">
         <div className="section-container py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-primary-foreground font-heading font-semibold text-sm md:text-base text-center sm:text-left">
             Trusted Security, Intelligence &amp; Emergency Response Solutions Across Jaipur
