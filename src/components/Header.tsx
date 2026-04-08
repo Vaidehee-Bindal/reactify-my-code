@@ -32,9 +32,9 @@ const navItems: NavItem[] = [
       { label: "About Company", to: "/about/company" },
       { label: "Mission & Vision", to: "/about/mission" },
       { label: "Founding Story", to: "/about/founding" },
-      { label: "Team", to: "/about/team" },
       { label: "Expansion Plan", to: "/about/expansion" },
       { label: "Why Trust Us", to: "/about/trust" },
+      { label: "Team", to: "/about/team" },
     ],
   },
   { label: "Location", to: "/location" },
@@ -166,8 +166,8 @@ const Header = () => {
       {/* Top bar */}
       <div className="section-container flex items-center justify-between py-3">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logoImg} alt="ATS Logo" className="h-16 w-16 rounded-md object-cover" />
-          <span className="font-heading text-xl font-bold text-primary-foreground tracking-wide">
+          <img src={logoImg} alt="ATS Logo" className="h-28 w-28 rounded-md object-contain" />
+          <span className="font-heading text-2xl md:text-3xl font-bold text-primary-foreground tracking-wide">
             Aanjaneya Taskforce Services
           </span>
         </Link>
