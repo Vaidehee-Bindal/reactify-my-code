@@ -62,8 +62,8 @@ const DesktopDropdown = ({ item }: { item: NavItem }) => {
     <li className="relative" onMouseEnter={enter} onMouseLeave={leave}>
       <button
         className={cn(
-          "flex items-center gap-1 px-6 py-4 text-sm font-nav font-medium uppercase tracking-[0.12em] transition-colors relative after:content-[''] after:absolute after:left-6 after:right-6 after:bottom-2 after:h-px after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left",
-          isActive ? "text-secondary after:scale-x-100" : "text-primary-foreground hover:text-secondary"
+          "flex items-center gap-1 px-5 py-4 text-base font-heading font-semibold uppercase tracking-wider transition-colors",
+          isActive ? "text-secondary" : "text-primary-foreground hover:text-secondary"
         )}
       >
         {item.label}
@@ -190,10 +190,9 @@ const Header = () => {
       </div>
 
       {/* Desktop nav */}
-      <nav className="hidden md:block bg-navy-dark" style={{ backgroundColor: '#0B3D91' }}>
-        <div className="section-container flex items-center justify-between gap-6">
-          <div className="flex-1" />
-          <ul className="flex items-center justify-center gap-2 lg:gap-4">
+      <nav className="hidden md:block bg-navy-dark">
+        <div className="section-container flex items-center justify-between">
+          <ul className="flex items-center">
             {navItems.map((item) =>
               item.children ? (
                 <DesktopDropdown key={item.label} item={item} />
@@ -202,9 +201,9 @@ const Header = () => {
                   <Link
                     to={item.to!}
                     className={cn(
-                      "block px-6 py-4 text-sm font-nav font-medium uppercase tracking-[0.12em] transition-colors relative after:content-[''] after:absolute after:left-6 after:right-6 after:bottom-2 after:h-px after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left",
+                      "block px-5 py-4 text-base font-heading font-semibold uppercase tracking-wider transition-colors",
                       location.pathname === item.to
-                        ? "text-secondary after:scale-x-100"
+                        ? "text-secondary"
                         : "text-primary-foreground hover:text-secondary"
                     )}
                   >
@@ -215,14 +214,12 @@ const Header = () => {
             )}
           </ul>
 
-          <div className="flex-1 flex justify-end">
-            {/* Download App CTA */}
-            <button
-              className="px-5 py-2 rounded-sm border-2 border-secondary bg-transparent text-secondary text-xs font-nav font-medium uppercase tracking-[0.12em] hover:bg-secondary hover:text-secondary-foreground transition-colors duration-200"
-            >
-              Download App
-            </button>
-          </div>
+          {/* Download App CTA */}
+          <button
+            className="px-5 py-2 rounded-md bg-secondary text-secondary-foreground text-xs font-bold uppercase tracking-wider hover:bg-gold-dark hover:scale-105 transition-all duration-200"
+          >
+            Download App
+          </button>
         </div>
       </nav>
 
