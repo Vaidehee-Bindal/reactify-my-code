@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['Open Sans', 'sans-serif'],
-        body: ['Open Sans', 'sans-serif'],
+        heading: ['Roboto Condensed', 'sans-serif'],
+        body: ['Roboto Condensed', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
