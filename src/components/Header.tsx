@@ -59,19 +59,19 @@ const DesktopDropdown = ({ item }: { item: NavItem }) => {
   useEffect(() => () => clearTimeout(timeout.current), []);
 
   return (
-    <li className="relative" onMouseEnter={enter} onMouseLeave={leave}>
+    <li className="relative flex items-center" onMouseEnter={enter} onMouseLeave={leave}>
       <button
         className={cn(
-          "flex items-center gap-1 px-5 py-4 text-base font-heading font-semibold uppercase tracking-wider transition-colors",
+          "flex items-center gap-1.5 h-[72px] px-7 text-[16px] font-body font-medium tracking-wide transition-colors duration-200",
           isActive ? "text-secondary" : "text-primary-foreground hover:text-secondary"
         )}
       >
         {item.label}
-        <ChevronDown className={cn("h-3 w-3 transition-transform duration-200", open && "rotate-180")} />
+        <ChevronDown className={cn("h-3.5 w-3.5 transition-transform duration-200", open && "rotate-180")} />
       </button>
       <ul
         className={cn(
-          "absolute top-full left-0 min-w-[220px] rounded-md bg-primary shadow-xl py-2 transition-all duration-200 z-50",
+          "absolute top-full left-0 min-w-[230px] rounded-sm bg-primary shadow-xl py-2 transition-all duration-200 z-50 border border-navy-light",
           open ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1"
         )}
       >
@@ -80,7 +80,7 @@ const DesktopDropdown = ({ item }: { item: NavItem }) => {
             <Link
               to={child.to}
               className={cn(
-                "flex items-center gap-2.5 px-5 py-2.5 text-sm transition-colors",
+                "flex items-center gap-2.5 px-6 py-2.5 text-sm font-body font-medium transition-colors duration-150",
                 location.pathname === child.to
                   ? "text-secondary bg-navy-light"
                   : "text-primary-foreground hover:bg-navy-light hover:text-secondary"
@@ -162,11 +162,11 @@ const Header = () => {
   }, [location.pathname]);
 
   return (
-    <header className="sticky top-0 z-50 bg-primary shadow-lg">
+    <header className="sticky top-0 z-50 bg-primary shadow-md backdrop-blur supports-[backdrop-filter]:bg-primary/95 transition-shadow duration-200">
       {/* Top bar */}
-      <div className="section-container flex items-center justify-between py-3">
+      <div className="section-container flex items-center justify-between py-4 px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logoImg} alt="ATS Logo" className="h-[4.5rem] w-[4.5rem] rounded-md object-contain" />
+          <img src={logoImg} alt="ATS Logo" className="h-[4.5rem] w-[4.5rem] rounded-sm object-contain" />
           <span className="font-heading text-xl md:text-2xl font-bold text-primary-foreground tracking-wide">
             Aanjaneya Taskforce Services
           </span>
@@ -176,7 +176,7 @@ const Header = () => {
           {/* Language toggle */}
           <button
             onClick={() => setLang(lang === "EN" ? "HI" : "EN")}
-            className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary-foreground/30 text-xs font-semibold text-primary-foreground hover:bg-navy-light transition-colors"
+            className="hidden md:flex items-center gap-1.5 px-4 py-2 rounded-sm border-2 border-primary-foreground/30 text-xs font-semibold text-primary-foreground hover:bg-navy-light hover:border-primary-foreground/60 transition-all duration-200"
           >
             <Globe className="h-3.5 w-3.5" />
             {lang === "EN" ? "हिंदी" : "English"}
@@ -190,18 +190,18 @@ const Header = () => {
       </div>
 
       {/* Desktop nav */}
-      <nav className="hidden md:block bg-navy-dark">
-        <div className="section-container flex items-center justify-between">
-          <ul className="flex items-center">
+      <nav className="hidden md:block bg-navy-dark border-t border-navy-light/40">
+        <div className="section-container flex items-center justify-between h-[72px] px-6 lg:px-8">
+          <ul className="flex items-center justify-center flex-1 gap-1">
             {navItems.map((item) =>
               item.children ? (
                 <DesktopDropdown key={item.label} item={item} />
               ) : (
-                <li key={item.label}>
+                <li key={item.label} className="flex items-center">
                   <Link
                     to={item.to!}
                     className={cn(
-                      "block px-5 py-4 text-base font-heading font-semibold uppercase tracking-wider transition-colors",
+                      "flex items-center h-[72px] px-7 text-[16px] font-body font-medium tracking-wide transition-colors duration-200",
                       location.pathname === item.to
                         ? "text-secondary"
                         : "text-primary-foreground hover:text-secondary"
@@ -216,7 +216,7 @@ const Header = () => {
 
           {/* Download App CTA */}
           <button
-            className="px-5 py-2 rounded-md bg-secondary text-secondary-foreground text-xs font-bold uppercase tracking-wider hover:bg-gold-dark hover:scale-105 transition-all duration-200"
+            className="ml-6 px-7 py-2.5 rounded-sm border-2 border-secondary bg-secondary text-secondary-foreground text-xs font-bold uppercase tracking-wider hover:bg-gold-dark hover:border-gold-dark transition-all duration-200"
           >
             Download App
           </button>
