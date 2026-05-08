@@ -9,10 +9,10 @@ interface HeroBannerProps {
 
 const HeroBanner = ({ title, subtitle, backgroundImage, showCta = false }: HeroBannerProps) => {
   return (
-    <section className="relative min-h-[320px] lg:min-h-[400px] flex items-center">
+    <section className="relative min-h-[420px] lg:min-h-[500px] flex items-center">
       <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImage})` }} />
       <div className="absolute inset-0 hero-overlay" />
-      <div className="relative section-container py-12 lg:py-16">
+      <div className="relative section-container py-16 lg:py-20">
         <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground uppercase leading-[1.15] max-w-4xl animate-fade-in">
           {title}
         </h1>
