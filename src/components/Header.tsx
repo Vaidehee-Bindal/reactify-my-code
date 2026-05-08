@@ -62,7 +62,7 @@ const DesktopDropdown = ({ item }: { item: NavItem }) => {
     <li className="relative flex items-center" onMouseEnter={enter} onMouseLeave={leave}>
       <button
         className={cn(
-          "flex items-center gap-1.5 h-[72px] px-7 text-[16px] font-body font-medium tracking-wide transition-colors duration-200",
+          "flex items-center gap-1.5 h-[56px] px-5 text-[15px] font-body font-medium tracking-wide transition-colors duration-200",
           isActive ? "text-secondary" : "text-primary-foreground hover:text-secondary"
         )}
       >
