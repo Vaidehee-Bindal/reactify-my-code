@@ -164,10 +164,10 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-primary shadow-md backdrop-blur supports-[backdrop-filter]:bg-primary/95 transition-shadow duration-200">
       {/* Top bar */}
-      <div className="section-container flex items-center justify-between py-2 px-6 lg:px-8">
+      <div className="section-container flex items-center justify-between py-3 px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logoImg} alt="ATS Logo" className="h-12 w-12 rounded-sm object-contain" />
-          <span className="font-heading text-base md:text-lg font-bold text-primary-foreground tracking-wide">
+          <img src={logoImg} alt="ATS Logo" className="h-14 w-14 rounded-sm object-contain" />
+          <span className="font-heading text-lg md:text-xl font-bold text-primary-foreground tracking-wide">
             Aanjaneya Taskforce Services
           </span>
         </Link>
