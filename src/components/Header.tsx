@@ -211,7 +211,7 @@ const Header = () => {
             </a>
           </div>
 
-          <div className="hidden md:flex items-center gap-3 text-foreground">
+          <div className="hidden md:flex items-center gap-3 text-primary-foreground">
             <a href="#" className="hover:underline">
               Screen Reader Access
             </a>
@@ -220,21 +220,21 @@ const Header = () => {
             <div className="flex items-center gap-1">
               <button
                 onClick={() => setFontScale((s) => Math.max(0.85, s - 0.1))}
-                className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-muted transition-colors"
+                className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-navy-light transition-colors"
                 aria-label="Decrease font size"
               >
                 A-
               </button>
               <button
                 onClick={() => setFontScale(1)}
-                className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-muted transition-colors"
+                className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-navy-light transition-colors"
                 aria-label="Reset font size"
               >
                 A
               </button>
               <button
                 onClick={() => setFontScale((s) => Math.min(1.3, s + 0.1))}
-                className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-muted transition-colors"
+                className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-navy-light transition-colors"
                 aria-label="Increase font size"
               >
                 A+
@@ -246,16 +246,16 @@ const Header = () => {
               <button
                 onClick={() => setHighContrast(false)}
                 className={cn(
-                  "w-5 h-5 rounded-full border border-border bg-background",
-                  !highContrast && "ring-2 ring-secondary ring-offset-1"
+                  "w-5 h-5 rounded-full border border-primary-foreground/40 bg-background",
+                  !highContrast && "ring-2 ring-secondary ring-offset-1 ring-offset-navy-dark"
                 )}
                 aria-label="Light mode"
               />
               <button
                 onClick={() => setHighContrast(true)}
                 className={cn(
-                  "w-5 h-5 rounded-full border border-border bg-foreground",
-                  highContrast && "ring-2 ring-secondary ring-offset-1"
+                  "w-5 h-5 rounded-full border border-primary-foreground/40 bg-foreground",
+                  highContrast && "ring-2 ring-secondary ring-offset-1 ring-offset-navy-dark"
                 )}
                 aria-label="High contrast mode"
               />
@@ -271,13 +271,13 @@ const Header = () => {
                 <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", langOpen && "rotate-180")} />
               </button>
               {langOpen && (
-                <div className="absolute right-0 top-full mt-1 bg-background border border-border rounded-sm shadow-lg min-w-[120px] z-50">
+                <div className="absolute right-0 top-full mt-1 bg-primary border border-navy-light rounded-sm shadow-lg min-w-[120px] z-50">
                   <button
                     onClick={() => {
                       setLang("EN");
                       setLangOpen(false);
                     }}
-                    className="block w-full text-left px-4 py-2 hover:bg-muted"
+                    className="block w-full text-left px-4 py-2 text-primary-foreground hover:bg-navy-light"
                   >
                     English
                   </button>
@@ -286,7 +286,7 @@ const Header = () => {
                       setLang("HI");
                       setLangOpen(false);
                     }}
-                    className="block w-full text-left px-4 py-2 hover:bg-muted"
+                    className="block w-full text-left px-4 py-2 text-primary-foreground hover:bg-navy-light"
                   >
                     हिंदी
                   </button>
