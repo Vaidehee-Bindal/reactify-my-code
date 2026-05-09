@@ -212,10 +212,6 @@ const Header = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-3 text-primary-foreground">
-            <a href="#" className="hover:underline">
-              Screen Reader Access
-            </a>
-
             {/* Font size toggles */}
             <div className="flex items-center gap-1">
               <button
@@ -239,26 +235,6 @@ const Header = () => {
               >
                 A+
               </button>
-            </div>
-
-            {/* Contrast toggle */}
-            <div className="flex items-center gap-1.5">
-              <button
-                onClick={() => setHighContrast(false)}
-                className={cn(
-                  "w-5 h-5 rounded-full border border-primary-foreground/40 bg-background",
-                  !highContrast && "ring-2 ring-secondary ring-offset-1 ring-offset-navy-dark"
-                )}
-                aria-label="Light mode"
-              />
-              <button
-                onClick={() => setHighContrast(true)}
-                className={cn(
-                  "w-5 h-5 rounded-full border border-primary-foreground/40 bg-foreground",
-                  highContrast && "ring-2 ring-secondary ring-offset-1 ring-offset-navy-dark"
-                )}
-                aria-label="High contrast mode"
-              />
             </div>
 
             {/* Language */}
