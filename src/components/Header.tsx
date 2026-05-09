@@ -198,32 +198,16 @@ const Header = () => {
   }, [highContrast]);
 
   return (
-    <header className="sticky top-0 z-50 bg-background shadow-md">
+    <header className="sticky top-0 z-50 bg-primary shadow-md">
       {/* Utility bar */}
-      <div className="bg-background border-b border-border">
+      <div className="bg-navy-dark border-b border-navy-light/40">
         <div className="section-container flex items-center justify-between py-1.5 px-4 lg:px-8 text-[13px]">
-          <div className="flex items-center gap-1 text-foreground">
-            <a href="#main" className="px-2 py-1 hover:underline">
-              Skip to main content
-            </a>
-            <span className="text-muted-foreground">|</span>
-            <a href="#" className="px-2 py-1 hover:underline">
-              Sitemap
-            </a>
-            <span className="text-muted-foreground">|</span>
-            <Link to="/contact" className="px-2 py-1 hover:underline">
-              Contact
-            </Link>
-            <span className="text-muted-foreground">|</span>
+          <div className="flex items-center gap-1 text-primary-foreground">
             <a
               href="#"
-              className="px-2.5 py-1 bg-primary text-primary-foreground rounded-sm font-medium hover:bg-navy-light transition-colors"
+              className="px-2.5 py-1 bg-secondary text-secondary-foreground rounded-sm font-semibold hover:bg-gold-dark transition-colors"
             >
               Feedback
-            </a>
-            <span className="text-muted-foreground">|</span>
-            <a href="#" className="px-2 py-1 hover:underline">
-              Media Login
             </a>
           </div>
 
