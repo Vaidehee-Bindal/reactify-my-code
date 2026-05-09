@@ -357,7 +357,7 @@ const Header = () => {
       </div>
 
       {/* Desktop nav */}
-      <nav className="hidden md:block bg-primary">
+      <nav className="hidden md:block bg-navy-dark border-t border-navy-light/40">
         <div className="section-container flex items-center justify-center px-4 lg:px-8">
           <ul className="flex items-center justify-center gap-2">
             {navItems.map((item) =>
