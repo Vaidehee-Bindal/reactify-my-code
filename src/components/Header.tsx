@@ -298,15 +298,15 @@ const Header = () => {
       </div>
 
       {/* Main bar: logo, socials, search, CTA */}
-      <div className="bg-background">
+      <div className="bg-primary">
         <div className="section-container flex items-center justify-between gap-4 py-3 px-4 lg:px-8">
           <Link to="/" className="flex items-center gap-3 shrink-0">
             <img src={logoImg} alt="ATS Logo" className="h-14 w-14 object-contain" />
             <div className="leading-tight">
-              <div className="font-heading text-lg md:text-xl font-bold text-primary tracking-wide">
+              <div className="font-heading text-lg md:text-xl font-bold text-primary-foreground tracking-wide">
                 Aanjaneya Taskforce Services
               </div>
-              <div className="text-xs md:text-sm text-muted-foreground">
+              <div className="text-xs md:text-sm text-primary-foreground/70">
                 Private Security & Intelligence
               </div>
             </div>
@@ -314,12 +314,12 @@ const Header = () => {
 
           {/* Social icons */}
           <div className="hidden lg:flex items-center gap-3">
-            {socialLinks.map(({ Icon, href, label, color }) => (
+            {socialLinks.map(({ Icon, href, label }) => (
               <a
                 key={label}
                 href={href}
                 aria-label={label}
-                className={cn("transition-transform hover:scale-110", color)}
+                className="text-primary-foreground hover:text-secondary transition-colors"
               >
                 <Icon className="h-5 w-5" />
               </a>
@@ -333,10 +333,10 @@ const Header = () => {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search"
-              className="w-full h-11 pl-4 pr-11 rounded-full border border-border bg-background text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary/40"
+              className="w-full h-11 pl-4 pr-11 rounded-full border border-navy-light bg-navy-dark text-sm text-primary-foreground placeholder:text-primary-foreground/60 focus:outline-none focus:ring-2 focus:ring-secondary/50"
             />
             <button
-              className="absolute right-1 top-1/2 -translate-y-1/2 h-9 w-9 flex items-center justify-center text-secondary hover:bg-muted rounded-full transition-colors"
+              className="absolute right-1 top-1/2 -translate-y-1/2 h-9 w-9 flex items-center justify-center text-secondary hover:bg-navy-light rounded-full transition-colors"
               aria-label="Search"
             >
               <Search className="h-4 w-4" />
@@ -350,7 +350,7 @@ const Header = () => {
           </button>
 
           {/* Mobile hamburger */}
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-primary">
+          <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-primary-foreground">
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
