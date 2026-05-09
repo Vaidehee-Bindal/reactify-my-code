@@ -198,36 +198,20 @@ const Header = () => {
   }, [highContrast]);
 
   return (
-    <header className="sticky top-0 z-50 bg-background shadow-md">
+    <header className="sticky top-0 z-50 bg-primary shadow-md">
       {/* Utility bar */}
-      <div className="bg-background border-b border-border">
+      <div className="bg-navy-dark border-b border-navy-light/40">
         <div className="section-container flex items-center justify-between py-1.5 px-4 lg:px-8 text-[13px]">
-          <div className="flex items-center gap-1 text-foreground">
-            <a href="#main" className="px-2 py-1 hover:underline">
-              Skip to main content
-            </a>
-            <span className="text-muted-foreground">|</span>
-            <a href="#" className="px-2 py-1 hover:underline">
-              Sitemap
-            </a>
-            <span className="text-muted-foreground">|</span>
-            <Link to="/contact" className="px-2 py-1 hover:underline">
-              Contact
-            </Link>
-            <span className="text-muted-foreground">|</span>
+          <div className="flex items-center gap-1 text-primary-foreground">
             <a
               href="#"
-              className="px-2.5 py-1 bg-primary text-primary-foreground rounded-sm font-medium hover:bg-navy-light transition-colors"
+              className="px-2.5 py-1 bg-secondary text-secondary-foreground rounded-sm font-semibold hover:bg-gold-dark transition-colors"
             >
               Feedback
             </a>
-            <span className="text-muted-foreground">|</span>
-            <a href="#" className="px-2 py-1 hover:underline">
-              Media Login
-            </a>
           </div>
 
-          <div className="hidden md:flex items-center gap-3 text-foreground">
+          <div className="hidden md:flex items-center gap-3 text-primary-foreground">
             <a href="#" className="hover:underline">
               Screen Reader Access
             </a>
@@ -236,21 +220,21 @@ const Header = () => {
             <div className="flex items-center gap-1">
               <button
                 onClick={() => setFontScale((s) => Math.max(0.85, s - 0.1))}
-                className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-muted transition-colors"
+                className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-navy-light transition-colors"
                 aria-label="Decrease font size"
               >
                 A-
               </button>
               <button
                 onClick={() => setFontScale(1)}
-                className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-muted transition-colors"
+                className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-navy-light transition-colors"
                 aria-label="Reset font size"
               >
                 A
               </button>
               <button
                 onClick={() => setFontScale((s) => Math.min(1.3, s + 0.1))}
-                className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-muted transition-colors"
+                className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-navy-light transition-colors"
                 aria-label="Increase font size"
               >
                 A+
@@ -262,16 +246,16 @@ const Header = () => {
               <button
                 onClick={() => setHighContrast(false)}
                 className={cn(
-                  "w-5 h-5 rounded-full border border-border bg-background",
-                  !highContrast && "ring-2 ring-secondary ring-offset-1"
+                  "w-5 h-5 rounded-full border border-primary-foreground/40 bg-background",
+                  !highContrast && "ring-2 ring-secondary ring-offset-1 ring-offset-navy-dark"
                 )}
                 aria-label="Light mode"
               />
               <button
                 onClick={() => setHighContrast(true)}
                 className={cn(
-                  "w-5 h-5 rounded-full border border-border bg-foreground",
-                  highContrast && "ring-2 ring-secondary ring-offset-1"
+                  "w-5 h-5 rounded-full border border-primary-foreground/40 bg-foreground",
+                  highContrast && "ring-2 ring-secondary ring-offset-1 ring-offset-navy-dark"
                 )}
                 aria-label="High contrast mode"
               />
@@ -287,13 +271,13 @@ const Header = () => {
                 <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", langOpen && "rotate-180")} />
               </button>
               {langOpen && (
-                <div className="absolute right-0 top-full mt-1 bg-background border border-border rounded-sm shadow-lg min-w-[120px] z-50">
+                <div className="absolute right-0 top-full mt-1 bg-primary border border-navy-light rounded-sm shadow-lg min-w-[120px] z-50">
                   <button
                     onClick={() => {
                       setLang("EN");
                       setLangOpen(false);
                     }}
-                    className="block w-full text-left px-4 py-2 hover:bg-muted"
+                    className="block w-full text-left px-4 py-2 text-primary-foreground hover:bg-navy-light"
                   >
                     English
                   </button>
@@ -302,7 +286,7 @@ const Header = () => {
                       setLang("HI");
                       setLangOpen(false);
                     }}
-                    className="block w-full text-left px-4 py-2 hover:bg-muted"
+                    className="block w-full text-left px-4 py-2 text-primary-foreground hover:bg-navy-light"
                   >
                     हिंदी
                   </button>
@@ -314,15 +298,15 @@ const Header = () => {
       </div>
 
       {/* Main bar: logo, socials, search, CTA */}
-      <div className="bg-background">
+      <div className="bg-primary">
         <div className="section-container flex items-center justify-between gap-4 py-3 px-4 lg:px-8">
           <Link to="/" className="flex items-center gap-3 shrink-0">
             <img src={logoImg} alt="ATS Logo" className="h-14 w-14 object-contain" />
             <div className="leading-tight">
-              <div className="font-heading text-lg md:text-xl font-bold text-primary tracking-wide">
+              <div className="font-heading text-lg md:text-xl font-bold text-primary-foreground tracking-wide">
                 Aanjaneya Taskforce Services
               </div>
-              <div className="text-xs md:text-sm text-muted-foreground">
+              <div className="text-xs md:text-sm text-primary-foreground/70">
                 Private Security & Intelligence
               </div>
             </div>
@@ -330,12 +314,12 @@ const Header = () => {
 
           {/* Social icons */}
           <div className="hidden lg:flex items-center gap-3">
-            {socialLinks.map(({ Icon, href, label, color }) => (
+            {socialLinks.map(({ Icon, href, label }) => (
               <a
                 key={label}
                 href={href}
                 aria-label={label}
-                className={cn("transition-transform hover:scale-110", color)}
+                className="text-primary-foreground hover:text-secondary transition-colors"
               >
                 <Icon className="h-5 w-5" />
               </a>
@@ -349,10 +333,10 @@ const Header = () => {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search"
-              className="w-full h-11 pl-4 pr-11 rounded-full border border-border bg-background text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary/40"
+              className="w-full h-11 pl-4 pr-11 rounded-full border border-navy-light bg-navy-dark text-sm text-primary-foreground placeholder:text-primary-foreground/60 focus:outline-none focus:ring-2 focus:ring-secondary/50"
             />
             <button
-              className="absolute right-1 top-1/2 -translate-y-1/2 h-9 w-9 flex items-center justify-center text-secondary hover:bg-muted rounded-full transition-colors"
+              className="absolute right-1 top-1/2 -translate-y-1/2 h-9 w-9 flex items-center justify-center text-secondary hover:bg-navy-light rounded-full transition-colors"
               aria-label="Search"
             >
               <Search className="h-4 w-4" />
@@ -366,14 +350,14 @@ const Header = () => {
           </button>
 
           {/* Mobile hamburger */}
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-primary">
+          <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-primary-foreground">
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
       {/* Desktop nav */}
-      <nav className="hidden md:block bg-primary">
+      <nav className="hidden md:block bg-navy-dark border-t border-navy-light/40">
         <div className="section-container flex items-center justify-center px-4 lg:px-8">
           <ul className="flex items-center justify-center gap-2">
             {navItems.map((item) =>
